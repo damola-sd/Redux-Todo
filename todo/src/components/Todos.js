@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { setCompleted } from "../actions/dispatchers";
+import { setCompleted, deleteItem } from "../actions/dispatchers";
 import Todo from './Todo';
 
 export class Todos extends React.Component {
@@ -17,6 +17,7 @@ export class Todos extends React.Component {
                               todo = {todo}
                               completed = {todo.completed}
                               setAsCompleted={this.props.setCompleted}
+                              deleteItem = {this.props.deleteItem}
                             />
                         ))
                     }
@@ -34,5 +35,5 @@ function mapStatetoProps(state) {
 }
 
 export default connect(
-    mapStatetoProps, { setCompleted },
+    mapStatetoProps, { setCompleted, deleteItem },
 )(Todos);

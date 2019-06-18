@@ -7,7 +7,6 @@ import TodoForm from './components/TodoForm';
 
 const StyledContainer = styled.div`
   padding: 10px;
-  border: ipx inset red;
   width: auto;
   height: auto;
   

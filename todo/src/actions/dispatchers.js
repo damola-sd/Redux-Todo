@@ -1,4 +1,4 @@
-import { ADD_ITEM, SET_COMPLETED } from ".";
+import { ADD_ITEM, SET_COMPLETED, DELETE_ITEM } from ".";
 import uuid from 'uuid';
 
 export function addItem(item) {
@@ -15,6 +15,12 @@ export function addItem(item) {
 export function setCompleted(id) {
     return {
         type: SET_COMPLETED,
+        payload: id,
+    }
+}
+export function deleteItem(id) {
+    return {
+        type: DELETE_ITEM,
         payload: id,
     }
 }

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { ADD_ITEM, SET_COMPLETED } from '../actions/index';
+import { ADD_ITEM, SET_COMPLETED, DELETE_ITEM } from '../actions/index';
 
 function todosReducer(state = [], action) {
     switch(action.type) {
@@ -12,6 +12,8 @@ function todosReducer(state = [], action) {
                 }
                 return todo;
             });
+    case(DELETE_ITEM):
+            return state.filter(task => task.id !== action.payload);
         default: 
             return state;
     }

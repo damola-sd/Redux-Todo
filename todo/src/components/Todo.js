@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import { shape, string, func, bool } from 'prop-types';
 
 const StyledTodo = styled.div`
-    background-color: pink;
+    background-color: ${pr => (pr.completed ? 'red': 'cyan')};
     padding: 10px;
-    width: 200px;
+    width: 500px;
     margin: 0 auto;
-    margin: 1px inset red;
+    color: blue;
+    margin-bottom: 5px;
+    
 
 `;
 export default class Todo extends React.Component {
@@ -16,15 +18,19 @@ export default class Todo extends React.Component {
 
         const {
             setAsCompleted,
-            todo
+            todo, 
+            deleteItem
         } = this.props;
         
         return(
-            <StyledTodo>
+            <StyledTodo
+              completed = {todo.completed}>
                 <div 
                   className = 'text'>{todo.item}</div>
                   <button
                     onClick ={() => setAsCompleted(todo.id)}>Mark as Completed</button>
+                    <button
+                    onClick ={() => deleteItem(todo.id)}>Delete Task</button>
             </StyledTodo>
         );
     }
