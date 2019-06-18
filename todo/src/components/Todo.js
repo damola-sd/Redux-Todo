@@ -8,7 +8,7 @@ const StyledTodo = styled.div`
     width: 500px;
     margin: 0 auto;
     color: blue;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     
 
 `;

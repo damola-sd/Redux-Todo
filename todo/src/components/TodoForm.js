@@ -2,7 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addItem } from '../actions/dispatchers';
 import { func } from 'prop-types';
+import styled from 'styled-components';
 
+
+const StyledForm = styled.div`
+    div {
+        padding: 10px;
+        margin: 0 auto:
+    }
+    button {
+        margin-left: 100px;
+    }
+`;
 export class TodoForm extends React.Component {
 
     todoItem = React.createRef();
@@ -16,7 +27,7 @@ export class TodoForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <StyledForm>
                 <h2> Add Todo Item</h2>
                 <div>
                     <span> TodoItem: </span>
@@ -25,7 +36,7 @@ export class TodoForm extends React.Component {
                         <button onClick = {this.onAddItem}>Add Item</button>
                     </div>
                 </div>
-            </div>
+            </StyledForm>
         );
     }
 }
