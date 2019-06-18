@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'redux';
+import { combineReducers } from 'redux';
 import { ADD_ITEM, SET_COMPLETED } from '../actions/index';
 
 function todosReducer(state = [], action) {
@@ -17,6 +17,6 @@ function todosReducer(state = [], action) {
     }
 }
 
-const combineReducer = combineReducers({
-    todo: todosReducer
+export const combineTodoReducer = combineReducers({
+    todos: todosReducer
 });

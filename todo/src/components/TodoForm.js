@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { string } from 'prop-types';
-
+import { addItem } from '../actions/dispatchers';
+import { func } from 'prop-types';
 
 export class TodoForm extends React.Component {
 
@@ -10,7 +10,8 @@ export class TodoForm extends React.Component {
     onAddItem = () => {
         this.props.addItem(
             this.todoItem.current.value
-        )
+        );
+        this.todoItem.current.value = '';
     }
 
     render() {
@@ -29,4 +30,14 @@ export class TodoForm extends React.Component {
     }
 }
 
-TodoForm.propTypes = {}
+TodoForm.propTypes = {
+    addItem: func.isRequired
+}
+
+function mapStateToProps(state) {
+    return {
+      
+    };
+  }
+
+export default connect(mapStateToProps, { addItem })(TodoForm);
